@@ -23,7 +23,6 @@
   - 前后端 README 或启动说明。
 - [ ] 统一架构图文件引用：
   - 当前 README 使用 `docs/mvp-architecture.png`。
-  - `AGENTS.md` 中提到 `docs/mvp-architecture.svg`，需要确认实际文件格式并统一。
 
 ## P0：核心数据模型
 

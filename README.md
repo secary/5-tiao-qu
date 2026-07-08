@@ -77,7 +77,7 @@
 
 ### 前端
 
-- Next.js 或 React
+- Next.js + TypeScript
 - 聊天式查询界面
 - 文件上传组件
 - 规则书列表
@@ -86,7 +86,7 @@
 
 ### 后端
 
-- FastAPI 或 Node.js
+- FastAPI
 - 文件上传与任务状态管理
 - OCR 调度
 - 文本切分
@@ -97,8 +97,36 @@
 ### 存储
 
 - PostgreSQL：存储规则书、页面、文本块、问答记录等结构化数据。
-- pgvector / Qdrant / Chroma：存储和检索 embedding。
+- pgvector：存储和检索 embedding。
 - 本地文件系统或对象存储：保存原始 PDF、页面图片和 OCR 结果。
+
+### 当前仓库结构
+
+```text
+apps/
+  web/              Next.js + TypeScript 网页端
+  api/              FastAPI 后端服务
+packages/
+  shared/           前后端共享类型和领域枚举
+storage/
+  uploads/          原始上传文件
+  pages/            PDF 页面图片
+  ocr/              OCR 或文本提取结果
+  tmp/              导入临时文件
+docs/               产品、架构和开发文档
+```
+
+### 本地开发
+
+```powershell
+Copy-Item .env.example .env
+npm install
+npm run db:up
+npm run dev:api
+npm run dev:web
+```
+
+数据库服务使用 `docker-compose.yml` 中的 PostgreSQL + pgvector。首次创建数据库时会执行 `apps/api/migrations/0001_initial_schema.sql`。
 
 ### OCR
 

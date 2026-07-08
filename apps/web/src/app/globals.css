@@ -1,0 +1,361 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f4ef;
+  --surface: #fffefa;
+  --surface-strong: #ffffff;
+  --line: #ded8cc;
+  --text: #24231f;
+  --muted: #6f6a60;
+  --accent: #2f6f58;
+  --accent-strong: #1f513f;
+  --warning: #ba6b22;
+  --blue: #315f8b;
+  --shadow: 0 18px 45px rgb(36 35 31 / 10%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  letter-spacing: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(240px, 280px) minmax(360px, 1fr) minmax(300px, 360px);
+  gap: 16px;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.sidebar,
+.chatPanel,
+.citationPanel {
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 92%, white);
+  box-shadow: var(--shadow);
+}
+
+.sidebar,
+.citationPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px;
+}
+
+.brand,
+.itemTitle,
+.chatHeader,
+.citationMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand h1,
+.brand p,
+.itemTitle h2,
+.itemTitle p,
+.chatHeader h2,
+.eyebrow,
+.citationPanel h2,
+.citationItem p {
+  margin: 0;
+}
+
+.brand h1 {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.brand p,
+.itemTitle p,
+.eyebrow,
+.statusLine,
+.citationMeta span,
+.citationItem dt {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.uploadButton,
+.askBox button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  background: var(--accent);
+  color: white;
+}
+
+.uploadButton {
+  min-height: 42px;
+  width: 100%;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.stack,
+.citationList,
+.messages {
+  display: grid;
+  gap: 12px;
+}
+
+.rulebookItem,
+.citationItem,
+.message {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-strong);
+}
+
+.rulebookItem {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+}
+
+.itemTitle h2 {
+  font-size: 15px;
+}
+
+.progressTrack {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e7e1d6;
+}
+
+.progressTrack span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+}
+
+.statusLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.statusLine strong {
+  color: var(--accent-strong);
+}
+
+.chatPanel {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: calc(100vh - 32px);
+}
+
+.chatHeader {
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.chatHeader h2,
+.citationPanel h2 {
+  margin: 2px 0 0;
+  font-size: 18px;
+}
+
+.eyebrow {
+  font-weight: 700;
+}
+
+.answerType {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: #e4f0ea;
+  color: var(--accent-strong);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.messages {
+  align-content: start;
+  overflow: auto;
+  padding: 20px;
+}
+
+.message {
+  max-width: min(680px, 100%);
+  padding: 14px 16px;
+  line-height: 1.65;
+}
+
+.message p {
+  margin: 0;
+}
+
+.message p + p {
+  margin-top: 8px;
+}
+
+.question {
+  justify-self: end;
+  border-color: #c8d9d0;
+  background: #edf7f2;
+}
+
+.response {
+  justify-self: start;
+}
+
+.conclusion {
+  font-weight: 800;
+}
+
+.inlineCitations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.inlineCitations a {
+  border: 1px solid #c9d9d1;
+  border-radius: 999px;
+  padding: 4px 9px;
+  color: var(--accent-strong);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.askBox {
+  display: grid;
+  grid-template-columns: 1fr 44px;
+  gap: 10px;
+  padding: 16px 20px 20px;
+  border-top: 1px solid var(--line);
+}
+
+.askBox input {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  padding: 0 14px;
+  color: var(--text);
+  outline: none;
+}
+
+.askBox input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgb(47 111 88 / 16%);
+}
+
+.askBox button {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+}
+
+.citationPanel header {
+  display: grid;
+  gap: 2px;
+}
+
+.citationItem {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+}
+
+.citationMeta {
+  justify-content: space-between;
+}
+
+.citationMeta strong {
+  color: var(--blue);
+}
+
+.citationItem p {
+  line-height: 1.6;
+}
+
+.citationItem dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.citationItem dl div {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 8px;
+}
+
+.citationItem dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.pagePreview {
+  display: grid;
+  min-height: 180px;
+  place-items: center;
+  border: 1px dashed #bfb5a6;
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, transparent 24px, #ebe5dc 25px, transparent 26px),
+    linear-gradient(#fffefa, #f7f1e8);
+  color: var(--muted);
+  font-weight: 700;
+}
+
+@media (max-width: 1080px) {
+  .workspace {
+    grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  }
+
+  .citationPanel {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .workspace {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .chatPanel {
+    min-height: 620px;
+  }
+
+  .chatHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
