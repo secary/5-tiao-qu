@@ -73,7 +73,7 @@
 
 ### MVP 架构图
 
-![桌游规则查询 App MVP 架构图](docs/mvp-architecture.pdf)
+![桌游规则查询 App MVP 架构图](./docs/mvp-architecture.png)
 
 ### 前端
 
@@ -177,4 +177,5 @@ OCR 输出建议至少包含：
 - 扩展、FAQ、勘误导入。
 - 手机端拍照上传。
 - 规则书页面截图高亮引用区域。
+
 
