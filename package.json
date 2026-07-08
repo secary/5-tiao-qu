@@ -1,0 +1,21 @@
+{
+  "name": "5-tiao-qu",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "packages/shared"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace apps/web run dev",
+    "build:web": "npm --workspace apps/web run build",
+    "typecheck:web": "npm --workspace apps/web run typecheck",
+    "typecheck:shared": "npm --workspace packages/shared run typecheck",
+    "dev:api": "cd apps/api && python -m uvicorn app.main:app --reload --port 8000",
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
